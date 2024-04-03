@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <View style={styles.header}>
       <Text style={styles.title}>YouTube</Text>
-      {/* Ajouter d'autres icônes et éléments du header ici */}
+    
     </View>
   );
 };
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
-    // Ajouter des styles supplémentaires pour la mise en forme
+   
   },
   title: {
     fontSize: 20,

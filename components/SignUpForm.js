@@ -1,4 +1,4 @@
-// SignUpForm.js
+
 
 import React, { useState } from 'react';
 import { View, TextInput, Button, StyleSheet } from 'react-native';
@@ -10,12 +10,12 @@ const SignUpForm = ({ onSignUp }) => {
   const [confirmPassword, setConfirmPassword] = useState('');
 
   const handleSignUp = () => {
-    // Vérification basique de la saisie
+ 
     if (password !== confirmPassword) {
       alert("Les mots de passe ne correspondent pas.");
       return;
     }
-    // Appeler onSignUp avec les informations de l'utilisateur
+    
     onSignUp(username, email, password);
   };
 
@@ -56,7 +56,7 @@ const SignUpForm = ({ onSignUp }) => {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
-    marginTop: 20, // Ajout d'un peu d'espace au-dessus du formulaire
+    marginTop: 20, 
   },
   input: {
     height: 40,

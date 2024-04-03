@@ -4,7 +4,7 @@ import Header from './components/Header';
 import VideoCard from './components/VideoCard';
 import NavigationBar from './components/NavigationBar';
 import LoginForm from './components/LoginForm';
-import SignUpForm from './components/SignUpForm'; // Assurez-vous que ce composant est créé
+import SignUpForm from './components/SignUpForm'; 
 
 export default function App() {
   const [showLogin, setShowLogin] = useState(false);
@@ -35,12 +35,12 @@ export default function App() {
   ];
 
   const handleLogin = (username, password) => {
-    // Logique de connexion ici
+   
     setShowLogin(false);
   };
 
   const handleSignUp = (username, email, password) => {
-    // Logique d'inscription ici
+ 
     setShowSignUp(false);
   };
 
@@ -86,5 +86,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
-  // Ajoutez d'autres styles si nécessaire
+
 });
