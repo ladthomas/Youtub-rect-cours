@@ -24,12 +24,14 @@ const SignUpForm = ({ onSignUp }) => {
       <TextInput
         style={styles.input}
         placeholder="Username"
+        placeholderTextColor="black"
         value={username}
         onChangeText={setUsername}
       />
       <TextInput
         style={styles.input}
         placeholder="Email"
+        placeholderTextColor="black"
         value={email}
         onChangeText={setEmail}
         keyboardType="email-address"
@@ -37,6 +39,7 @@ const SignUpForm = ({ onSignUp }) => {
       <TextInput
         style={styles.input}
         placeholder="Password"
+        placeholderTextColor="black"
         value={password}
         onChangeText={setPassword}
         secureTextEntry
@@ -44,6 +47,7 @@ const SignUpForm = ({ onSignUp }) => {
       <TextInput
         style={styles.input}
         placeholder="Confirm Password"
+        placeholderTextColor="black"
         value={confirmPassword}
         onChangeText={setConfirmPassword}
         secureTextEntry
@@ -56,14 +60,28 @@ const SignUpForm = ({ onSignUp }) => {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
-    marginTop: 20, 
+    backgroundColor: 'aliceblue',
+    width:200,
+    borderRadius: 10, 
   },
+  
   input: {
     height: 40,
-    borderColor: 'gray',
-    borderWidth: 1,
+    borderColor: 'white', 
+    borderWidth: 2, 
     marginBottom: 20,
     paddingHorizontal: 10,
+    color: 'black', 
+    borderRadius: 5,
+    
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
   },
 });
 

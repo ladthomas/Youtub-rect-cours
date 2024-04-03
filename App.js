@@ -1,48 +1,38 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, ScrollView, Modal, SafeAreaView, Button } from 'react-native';
+import { StyleSheet, View, ScrollView, Modal, SafeAreaView } from 'react-native';
 import Header from './components/Header';
-import VideoCard from './components/VideoCard';
+import VideoCard from './components/VideoCard'; 
 import NavigationBar from './components/NavigationBar';
 import LoginForm from './components/LoginForm';
-import SignUpForm from './components/SignUpForm'; 
+import SignUpForm from './components/SignUpForm';
 
 export default function App() {
   const [showLogin, setShowLogin] = useState(false);
   const [showSignUp, setShowSignUp] = useState(false);
 
-  // Les données de vos vidéos
+  // Les données de vos vidéos avec des URLs de miniatures aléatoires
   const videoData = [
     {
       title: 'Premier Titre',
       channel: 'Chaîne A',
-      thumbnailUri: 'url_pour_première_image',
+      thumbnailUri: 'https://picsum.photos/200/300?random=1',
     },
     {
       title: 'Deuxième Titre',
       channel: 'Chaîne B',
-      thumbnailUri: 'url_pour_deuxième_image',
+      thumbnailUri: 'https://picsum.photos/200/300?random=2',
     },
     {
       title: 'Troisième Titre',
       channel: 'Chaîne C',
-      thumbnailUri: 'url_pour_troisième_image',
+      thumbnailUri: 'https://picsum.photos/200/300?random=3',
     },
     {
       title: 'Quatrième Titre',
       channel: 'Chaîne D',
-      thumbnailUri: 'url_pour_quatrième_image',
+      thumbnailUri: 'https://picsum.photos/200/300?random=4',
     },
   ];
-
-  const handleLogin = (username, password) => {
-   
-    setShowLogin(false);
-  };
-
-  const handleSignUp = (username, email, password) => {
- 
-    setShowSignUp(false);
-  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -60,17 +50,18 @@ export default function App() {
       <NavigationBar onHomePress={() => setShowLogin(true)} onSignUpPress={() => setShowSignUp(true)} />
       <Modal visible={showLogin} animationType="slide" onRequestClose={() => setShowLogin(false)} transparent={true}>
         <View style={styles.modalView}>
-          <LoginForm onLogin={handleLogin} />
+          <LoginForm onLogin={() => setShowLogin(false)} />
         </View>
       </Modal>
       <Modal visible={showSignUp} animationType="slide" onRequestClose={() => setShowSignUp(false)} transparent={true}>
         <View style={styles.modalView}>
-          <SignUpForm onSignUp={handleSignUp} />
+          <SignUpForm onSignUp={() => setShowSignUp(false)} />
         </View>
       </Modal>
     </SafeAreaView>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
@@ -86,5 +77,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
-
 });
